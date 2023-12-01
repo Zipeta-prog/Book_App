@@ -1,42 +1,12 @@
-﻿using System;
-using Microsoft.Win32;
-using Register;
+﻿// See https://aka.ms/new-console-template for more information
+using BOOK_SYSTEM;
+using BOOK_SYSTEM.Services;
 
-namespace Book_App
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            //Welcome, Choose an Option to Proceed.
-            //1. Register (Type 1)
-            //2. Login (Type 2)
+Console.WriteLine("Hello, World!");
 
-            //If (Console.readline == 1)
-            Register register = new Register();
-            Login login = new Login();
+LoginService loginService = new LoginService();
+await loginService.LoginAsync();
 
-            //If (Console.readline == 2)
-            /* Login login = new Login();
-             login.main(); */
+/*Register register = new Register();
+register.RegisterUser();*/
 
-            Console.WriteLine(" Welcome, Choose an Option to Proceed \n 1. Register  (Type 1) \n 2. Login  (Type 2)");
-            string option = Console.ReadLine();
-            if (option == "1")
-            {
-                register.Start();
-
-            }
-            else if (option == "2")
-            {
-                Console.WriteLine("Proceed to login");
-                login.Start();
-            }
-            else
-            {
-                Console.WriteLine("You entered an invalid option");
-            }
-
-        }
-    }
-}
