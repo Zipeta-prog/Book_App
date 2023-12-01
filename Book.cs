@@ -4,19 +4,19 @@ namespace Books
 {
     public class BookS
     {
-        private List<Book> books = new List<Book>();
-        private string booksFilePath = @"C:\registration-system-master\registration-system-master\books.txt";
-        private string ordersFilePath = @"C:\registration-system-master\registration-system-master\orders.txt";
+        private List<BookS> books = new List<BookS>();
+        private string booksFilePath = @"C:\Book_App\Book.cs\books.txt";
+        private string ordersFilePath = @"C:\Book_App\Book.cs\orders.txt";
 
         public void AddBook(Admin admin, string name, string description)
         {
             if (admin != null)
             {
-                Book newBook = new Book(name, description);
+                BookS newBook = new BookS(name, description);
                 books.Add(newBook);
 
                 // Save the updated book list to a file (books.txt)
-                using (StreamWriter writer = File.AppendText(@"C:\registration-system-master\registration-system-master\books.txt"))
+                using (StreamWriter writer = File.AppendText(@"C:\Book_App\Book.cs\books.txt"))
                 {
                     writer.WriteLine($"{newBook.ID},{newBook.BookName},{newBook.Description}");
                 }

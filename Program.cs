@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.Win32;
-using Register;
+// using static register;
 
 namespace Book_App
 {
